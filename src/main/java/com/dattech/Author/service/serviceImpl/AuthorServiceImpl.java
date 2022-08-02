@@ -27,7 +27,7 @@ public class AuthorServiceImpl implements AuthorServiceI {
     }
 
     @Override
-    public AuthorDto findAuthorById(Integer id) throws AuthorNotFoundException {
+    public AuthorDto findAuthorById(Integer id)  throws AuthorNotFoundException{
         Optional<Author> optionalAuthor = authorRepository.findById(id);
         return optionalAuthor.map(AuthorDto::getAuthorDto).orElseThrow(() -> new AuthorNotFoundException(id));
     }

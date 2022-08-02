@@ -1,5 +1,6 @@
 package com.dattech.Author.model;
 
+
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -14,8 +15,11 @@ import javax.persistence.*;
 @AllArgsConstructor
 @Builder
 public class Author {
+
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id", nullable = false)
     @ApiModelProperty(notes="Unique auto generated identifier for the system")
     private Integer id;
 
@@ -36,6 +40,11 @@ public class Author {
     @ApiModelProperty(notes="Author's email ")
     private String email;
 
+    public Integer getId() {
+        return id;
+    }
 
-
+    public void setId(Integer id) {
+        this.id = id;
+    }
 }
