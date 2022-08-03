@@ -33,7 +33,7 @@ spec:
           imagePullPolicy: Always
           ports:
             - name: http-author
-              containerPort: 8080
+              containerPort: 8500
 #          imagePullSecrets:
 #            - name: image-secret
 
@@ -47,7 +47,8 @@ spec:
             - name: SW_AGENT_NAME
               value: "author-server"
             - name: SW_AGENT_COLLECTOR_BACKEND_SERVICES
-              value: "127.0.0.1:12800"
+#              value: skywalking-oap.default.svc:11800
+              value: "127.0.0.1:11800"
               # Skywalking end
 
           resources:
@@ -69,16 +70,16 @@ spec:
   selector:
     app: author-server
   ports:
-    - name: http
-      protocol: TCP
-      port: 80
-      targetPort: http-author
-#      nodePort: 30003
-    - name: https
-      protocol: TCP
-      port: 443
-      targetPort: http-author
-##      nodePort: 30012
+    - name: "http"
+      protocol: "TCP"
+      port: 8500
+      targetPort: 8500
+#      nodePort: 30005
+#    - name: https
+#      protocol: TCP
+#      port: 443
+#      targetPort: http-author
+#      nodePort: 30005
 
 
 

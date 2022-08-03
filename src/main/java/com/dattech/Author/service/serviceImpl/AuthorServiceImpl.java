@@ -20,6 +20,7 @@ public class AuthorServiceImpl implements AuthorServiceI {
 
     @Override
     public AuthorDto addAuthor(AuthorDto authorDto) {
+
         if (authorDto == null)return null;
         Author author = AuthorDto.getAuthor(authorDto);
         return AuthorDto.getAuthorDto((Author) authorRepository.save(author));
@@ -42,7 +43,7 @@ public class AuthorServiceImpl implements AuthorServiceI {
     }
 
     @Override
-    public AuthorDto modifyWikiCategory(Integer id, AuthorDto authorDto)  {
+    public AuthorDto modifyAuthor(Integer id, AuthorDto authorDto)  {
         Optional<Author> optionalAuthor = authorRepository.findById(id);
 
         if(optionalAuthor.isEmpty())return null;
