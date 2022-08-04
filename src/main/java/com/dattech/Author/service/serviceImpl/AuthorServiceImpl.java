@@ -56,8 +56,6 @@ public class AuthorServiceImpl implements AuthorServiceI {
         author.setLastName(authorDto.getLastName());
         author.setPhone(authorDto.getPhone());
         author.setEmail(authorDto.getEmail());
-        //author.setWikis(authorDto.);
-
         return AuthorDto.getAuthorDto((Author) authorRepository.save(author));
 
     }

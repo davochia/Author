@@ -47,8 +47,7 @@ spec:
             - name: SW_AGENT_NAME
               value: "author-server"
             - name: SW_AGENT_COLLECTOR_BACKEND_SERVICES
-#              value: skywalking-oap.default.svc:11800
-              value: "127.0.0.1:11800"
+              value: "http://127.0.0.1:11800"
               # Skywalking end
 
           resources:
@@ -73,7 +72,7 @@ spec:
     - name: "http"
       protocol: "TCP"
       port: 8500
-      targetPort: 8500
+      targetPort: http-author
 #      nodePort: 30005
 #    - name: https
 #      protocol: TCP
