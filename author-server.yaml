@@ -47,7 +47,7 @@ spec:
             - name: SW_AGENT_NAME
               value: "author-server"
             - name: SW_AGENT_COLLECTOR_BACKEND_SERVICES
-              value: "192.168.50.155:11800"
+              value: "127.0.0.1:11800"
               # Skywalking end
 
           resources:
