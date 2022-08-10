@@ -1,0 +1,28 @@
+# This assumes that your Prometheus instance can access this application on localhost:9000
+
+global:
+  scrape_interval:     15s # Set the scrape interval to every 15 seconds. Default is every 1 minute.
+  evaluation_interval: 15s # Evaluate rules every 15 seconds. The default is every 1 minute.
+
+scrape_configs:
+  - job_name: 'Author-server'
+    metrics_path: '/actuator/prometheus'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['host.docker.internal:9000']
+
+
+
+#  - job_name: 'Application with prometheus'
+#    metrics_path: '/actuator/prometheus'
+#    scrape_interval: 5s
+#    static_configs:
+#      - targets: ['localhost:9000']
+#        labels:
+#          application: 'My Spring Boot Application'
+
+
+#    static_configs:
+#      - targets: ['localhost:9090','localhost:8080','localhost:9100', 'localhost:9113']
+
+

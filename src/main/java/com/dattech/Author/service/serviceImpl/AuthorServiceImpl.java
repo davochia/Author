@@ -1,5 +1,6 @@
 package com.dattech.Author.service.serviceImpl;
 
+
 import com.dattech.Author.dto.AuthorDto;
 import com.dattech.Author.exception.AuthorNotFoundException;
 import com.dattech.Author.model.Author;
@@ -28,7 +29,7 @@ public class AuthorServiceImpl implements AuthorServiceI {
     }
 
     @Override
-    public AuthorDto findAuthorById(Integer id)  throws AuthorNotFoundException{
+    public AuthorDto findAuthorById(Integer id)  throws AuthorNotFoundException {
         Optional<Author> optionalAuthor = authorRepository.findById(id);
         return optionalAuthor.map(AuthorDto::getAuthorDto).orElseThrow(() -> new AuthorNotFoundException(id));
     }
@@ -56,6 +57,7 @@ public class AuthorServiceImpl implements AuthorServiceI {
         author.setLastName(authorDto.getLastName());
         author.setPhone(authorDto.getPhone());
         author.setEmail(authorDto.getEmail());
+
         return AuthorDto.getAuthorDto((Author) authorRepository.save(author));
 
     }
