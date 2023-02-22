@@ -53,11 +53,7 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-			<scope>runtime</scope>
-		</dependency>
+
 
 <!--		Swagger -->
 
@@ -67,25 +63,7 @@
 			<version>1.6.9</version>
 		</dependency>
 
-<!--		<dependency>-->
-<!--			<groupId>org.springdoc</groupId>-->
-<!--			<artifactId>springdoc-openapi-webmvc-core</artifactId>-->
-<!--			<version>1.6.9</version>-->
-<!--		</dependency>-->
 
-
-
-
-		<!-- https://mvnrepository.com/artifact/org.apache.skywalking/apm-toolkit-logback-1.x -->
-<!--		<dependency>-->
-<!--			<groupId>org.apache.skywalking</groupId>-->
-<!--			<artifactId>apm-toolkit-logback-1.x</artifactId>-->
-<!--			<version>8.11.0</version>-->
-<!--		</dependency>-->
-
-<!--		Prometheus and actuator-->
-
-		<!-- https://mvnrepository.com/artifact/io.micrometer/micrometer-registry-prometheus -->
 		<dependency>
 			<groupId>io.micrometer</groupId>
 			<artifactId>micrometer-registry-prometheus</artifactId>
